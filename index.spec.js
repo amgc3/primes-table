@@ -1,4 +1,4 @@
-const { isPrime, generatePrimes } = require('./index');
+const { isPrime, generatePrimes, generateTable } = require('./index');
 
 describe('isPrime', () => {
   it('returns false if n is less than or equal to 1', () => {
@@ -47,3 +47,11 @@ describe('generatePrimes', () => {
     expect(generatePrimes(-1)).toEqual([]);
   });
 });
+describe('generateTable', () => {
+    it('returns Invalid input when given 0', () => {
+        expect(generateTable(0)).toBe('Invalid input');
+    });
+    it('returns Invalid input when given  a negative number', () => {
+        expect(generateTable(-5)).toBe('Invalid input');
+    })
+})

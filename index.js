@@ -23,8 +23,32 @@ const generatePrimes = (n) => {
   return primes;
 };
 
+const generateTable = (n) => {
+  let row = '|         |';
+  const primes = generatePrimes(n);
+  if (primes.length === 0) {
+    console.log('Invalid input');
+    return 'Invalid input';
+  }
+
+  for (let i = 0; i <= n; i++) {
+    if (i === 0) {
+      for (let r = 0; r < n; r++) {
+        row += ` ${primes[r] * (i + 1)}     |`; //  need this in first row
+      }
+    } else {
+      for (let r = 0; r < n; r++) {
+        row += ` ${primes[r] * primes[i - 1]}     |`;
+      }
+    }
+    console.log(row);
+    row = `|  ${primes[i]}      |`;
+  }
+};
+generateTable(0);
 
 module.exports = {
   isPrime,
   generatePrimes,
+  generateTable,
 };
