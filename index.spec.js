@@ -14,5 +14,9 @@ describe('isPrime', () => {
   it('returns false if n is a multiple of 2', () => {
       expect(isPrime(8)).toBe(false);
       expect(isPrime(22)).toBe(false);
-  })
+  });
+  it('returns false if n is a multiple of 3', () => {
+    expect(isPrime(9)).toBe(false);
+    expect(isPrime(27)).toBe(false);
+})
 });
