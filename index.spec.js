@@ -25,5 +25,8 @@ describe('isPrime', () => {
   it('returns true if n ie equal to 7', () => {
       expect(isPrime(7)).toBe(true);
   });
-  
+  it('return false for multiples of 5', () => {
+      expect(isPrime(25)).toBe(false);
+  })
+
 });
