@@ -12,6 +12,16 @@ const isPrime = (n) => {
   return true;
 };
 
+const generatePrimes = (n) => {
+    const primes = [];
+    let i = 2;
+    while (primes.length < n) {
+        if (isPrime(i)) primes.push(i);
+        i++;
+    }
+    return primes;
+}
+
 module.exports = {
   isPrime,
 };
