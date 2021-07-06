@@ -5,6 +5,9 @@ describe('isPrime', () => {
     expect(isPrime(1)).toBe(false);
   });
   it('returns true if n is equal to 2', () => {
-      expect(isPrime(2)).toBe(true);
-  })
+    expect(isPrime(2)).toBe(true);
+  });
+  it('returns true if n is equal to 3', () => {
+    expect(isPrime(3)).toBe(true);
+  });
 });
