@@ -31,4 +31,11 @@ describe('isPrime', () => {
   it('return false for multiples of 7', () => {
     expect(isPrime(49)).toBe(false);
   });
+  it('returns false if n is the square or cube of a prime', () => {
+    let n = 11 * 11;
+    expect(isPrime(n)).toBe(false);
+    n = 13 * 13 * 13;
+    expect(isPrime(n)).toBe(false);
+
+});
 });
