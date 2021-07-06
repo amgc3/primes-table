@@ -1,3 +1,6 @@
+const readline = require('readline-sync');
+
+
 const isPrime = (n) => {
   if (n <= 1) return false;
 
@@ -23,7 +26,9 @@ const generatePrimes = (n) => {
   return primes;
 };
 
-const generateTable = (n) => {
+const generateTable = () => {
+  console.log('Please enter number: '); 
+  let n = readline.prompt();
   let row = '|         |';
   const primes = generatePrimes(n);
   if (primes.length === 0) {
@@ -45,7 +50,7 @@ const generateTable = (n) => {
     row = `|  ${primes[i]}      |`;
   }
 };
-generateTable(0);
+generateTable();
 
 module.exports = {
   isPrime,
