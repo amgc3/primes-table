@@ -13,15 +13,18 @@ const isPrime = (n) => {
 };
 
 const generatePrimes = (n) => {
-    const primes = [];
-    let i = 2;
-    while (primes.length < n) {
-        if (isPrime(i)) primes.push(i);
-        i++;
-    }
-    return primes;
-}
+  const primes = [];
+  if (n < 1) return [];
+  let i = 2;
+  while (primes.length < n) {
+    if (isPrime(i)) primes.push(i);
+    i++;
+  }
+  return primes;
+};
+
 
 module.exports = {
   isPrime,
+  generatePrimes,
 };

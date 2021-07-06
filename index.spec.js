@@ -1,4 +1,4 @@
-const { isPrime } = require('./index');
+const { isPrime, generatePrimes } = require('./index');
 
 describe('isPrime', () => {
   it('returns false if n is less than or equal to 1', () => {
@@ -36,6 +36,14 @@ describe('isPrime', () => {
     expect(isPrime(n)).toBe(false);
     n = 13 * 13 * 13;
     expect(isPrime(n)).toBe(false);
-
+  });
 });
+
+describe('generatePrimes', () => {
+  it('returns an empty array when given 0', () => {
+    expect(generatePrimes(0)).toEqual([]);
+  });
+  it('returns an empty array when given a negative number', () => {
+    expect(generatePrimes(-1)).toEqual([]);
+  });
 });
