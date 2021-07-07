@@ -1,4 +1,4 @@
-const { isPrime, generatePrimes, generateTable } = require('./prime');
+const { isPrime, generatePrimes, generateTable } = require('./prime2');
 
 describe('isPrime', () => {
   it('returns false if n is less than or equal to 1', () => {
@@ -40,21 +40,26 @@ describe('isPrime', () => {
 });
 
 describe('generatePrimes', () => {
- it('returns an array with 2 and 3 when given 2', () => {
-   expect(generatePrimes(2)).toEqual([2, 3]);
- });
- it('returns an empty array when given 0', () => {
-   expect(generatePrimes(0)).toEqual([]);
- });
- it('returns an empty array when given a negative number', () => {
-   expect(generatePrimes(-1)).toEqual([]);
- });
+  it('returns an array with 2 and 3 when given 2', () => {
+    expect(generatePrimes(2)).toEqual([2, 3]);
+  });
+  it('returns an empty array when given 0', () => {
+    expect(generatePrimes(0)).toEqual([]);
+  });
+  it('returns an empty array when given a negative number', () => {
+    expect(generatePrimes(-1)).toEqual([]);
+  });
 });
 describe('generateTable', () => {
-    it('returns Invalid input when given 0', () => {
-        expect(generateTable(0)).toBe('Invalid input');
-    });
-    it('returns Invalid input when given  a negative number', () => {
-        expect(generateTable(-5)).toBe('Invalid input');
-    })
-})
+  it('returns Invalid input when given 0', () => {
+    expect(generateTable(0)).toBe('Invalid input');
+  });
+  it('returns Invalid input when given  a negative number', () => {
+    expect(generateTable(-5)).toBe('Invalid input');
+  });
+  it('returns the table when input is valid', () => {
+    expect(generateTable(2)).toBe(
+      `|         | 2     | 3     | \n|  2      | 4     | 6     | \n|  3      | 6     | 9     | \n`
+    );
+  });
+});
