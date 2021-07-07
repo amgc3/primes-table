@@ -59,7 +59,7 @@ describe('generateTable', () => {
   });
   it('returns the table when input is valid', () => {
     expect(generateTable(2)).toBe(
-      `|         | 2     | 3     | \n|  2      | 4     | 6     | \n|  3      | 6     | 9     | \n`
+      `|        | 2\t | 3\t | \n|  2\t | 4\t | 6\t | \n|  3\t | 6\t | 9\t | \n`
     );
   });
 });

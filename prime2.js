@@ -24,7 +24,7 @@ const isPrime = (n) => {
   };
   
   const generateTable = (n) => {
-    let row = '|         |';
+    let row = '|        |';
     const primes = generatePrimes(n);
     if (primes.length === 0) {
       console.log('Invalid input');
@@ -35,15 +35,15 @@ const isPrime = (n) => {
     for (let i = 0; i <= n; i++) {
       if (i === 0) {
         for (let r = 0; r < n; r++) {
-          row += ` ${primes[r] * (i + 1)}     |`; //  need this in first row
+          row += ` ${primes[r] * (i + 1)}\t |`; //  need this in first row
         }
       } else {
         for (let r = 0; r < n; r++) {
-          row += ` ${primes[r] * primes[i - 1]}     |`;
+          row += ` ${primes[r] * primes[i - 1]}\t |`;
         }
       }
       tableString += `${row} \n`
-      row = `|  ${primes[i]}      |`;
+      row = `|  ${primes[i]}\t |`;
     }
     return tableString;
   };
