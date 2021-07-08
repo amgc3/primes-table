@@ -1,5 +1,5 @@
 const readline = require('readline-sync');
-const {generateTable} = require('./prime2')
+const {generateTable} = require('./prime')
 
 const startingPoint = () => {
   console.log('Please enter number: '); 

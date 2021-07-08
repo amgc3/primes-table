@@ -1,4 +1,4 @@
-const { isPrime, generatePrimes, generateTable } = require('./prime2');
+const { isPrime, generatePrimes, generateTable } = require('./prime');
 
 describe('isPrime', () => {
   it('returns false if n is less than or equal to 1', () => {
