@@ -23,6 +23,11 @@ const isPrime = (n) => {
     return fibonacci;
 
   }
+
+  const operators = {
+    '+': function(a, b) { return a + b },
+    '*': function(a, b) { return a * b },
+};
   
   const generatePrimes = (n) => {
     const primes = [];
@@ -35,7 +40,7 @@ const isPrime = (n) => {
     return primes;
   };
 
-  const generateFibonacciTable = (n) => {
+  const generateFibonacciTable = (n, op) => {
     let row = '|        |';
     const fibonacci = generateFibonacci(n);
     if (fibonacci.length === 0) {
@@ -50,7 +55,7 @@ const isPrime = (n) => {
         }
       } else {
         for (let r = 0; r < n; r++) {
-          row += ` ${fibonacci[r] * fibonacci[i - 1]}\t |`;
+          row += ` ${operators[op](fibonacci[r], fibonacci[i - 1])}\t |`;
         }
       }
       tableString += `${row} \n`
@@ -60,7 +65,7 @@ const isPrime = (n) => {
   };
   
   
-  const generatePrimesTable = (n) => {
+  const generatePrimesTable = (n, op) => {
     let row = '|        |';
     const primes = generatePrimes(n);
     if (primes.length === 0) {
@@ -75,7 +80,7 @@ const isPrime = (n) => {
         }
       } else {
         for (let r = 0; r < n; r++) {
-          row += ` ${primes[r] * primes[i - 1]}\t |`;
+          row += ` ${operators[op](primes[r], primes[i - 1])}\t |`;
         }
       }
       tableString += `${row} \n`
