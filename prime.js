@@ -37,8 +37,8 @@ const isPrime = (n) => {
 
   const generateFibonacciTable = (n) => {
     let row = '|        |';
-    const primes = generateFibonacci(n);
-    if (primes.length === 0) {
+    const fibonacci = generateFibonacci(n);
+    if (fibonacci.length === 0) {
       return 'Invalid input';
     }
     
@@ -46,15 +46,15 @@ const isPrime = (n) => {
     for (let i = 0; i <= n; i++) {
       if (i === 0) {
         for (let r = 0; r < n; r++) {
-          row += ` ${primes[r] * (i + 1)}\t |`; //  need this in first row
+          row += ` ${fibonacci[r] * (i + 1)}\t |`; //  need this in first row
         }
       } else {
         for (let r = 0; r < n; r++) {
-          row += ` ${primes[r] * primes[i - 1]}\t |`;
+          row += ` ${fibonacci[r] * fibonacci[i - 1]}\t |`;
         }
       }
       tableString += `${row} \n`
-      row = `|  ${primes[i]}\t |`;
+      row = `|  ${fibonacci[i]}\t |`;
     }
     return tableString;
   };
