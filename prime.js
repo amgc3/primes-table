@@ -11,6 +11,18 @@ const isPrime = (n) => {
     }
     return true;
   };
+
+  const generateFibonacci = (n) => {
+    const fibonacci = [1, 1];
+    if (n === 1) {
+      return [1];
+    }
+    while (fibonacci.length < n) {
+      fibonacci.push(fibonacci[fibonacci.length - 1] + fibonacci[fibonacci.length -2]);
+    }
+    return fibonacci;
+
+  }
   
   const generatePrimes = (n) => {
     const primes = [];
@@ -22,8 +34,33 @@ const isPrime = (n) => {
     }
     return primes;
   };
+
+  const generateFibonacciTable = (n) => {
+    let row = '|        |';
+    const primes = generateFibonacci(n);
+    if (primes.length === 0) {
+      return 'Invalid input';
+    }
+    
+    let tableString = "";
+    for (let i = 0; i <= n; i++) {
+      if (i === 0) {
+        for (let r = 0; r < n; r++) {
+          row += ` ${primes[r] * (i + 1)}\t |`; //  need this in first row
+        }
+      } else {
+        for (let r = 0; r < n; r++) {
+          row += ` ${primes[r] * primes[i - 1]}\t |`;
+        }
+      }
+      tableString += `${row} \n`
+      row = `|  ${primes[i]}\t |`;
+    }
+    return tableString;
+  };
   
-  const generateTable = (n) => {
+  
+  const generatePrimesTable = (n) => {
     let row = '|        |';
     const primes = generatePrimes(n);
     if (primes.length === 0) {
@@ -50,6 +87,8 @@ const isPrime = (n) => {
   module.exports = {
     isPrime,
     generatePrimes,
-    generateTable,
+    generatePrimesTable,
+    generateFibonacci,
+    generateFibonacciTable
   };
   

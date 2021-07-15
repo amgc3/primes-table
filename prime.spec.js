@@ -1,4 +1,9 @@
-const { isPrime, generatePrimes, generateTable } = require('./prime');
+const {
+  isPrime,
+  generatePrimes,
+  generateTable,
+  generateFibonacci,
+} = require('./prime');
 
 describe('isPrime', () => {
   it('returns false if n is less than or equal to 1', () => {
@@ -62,4 +67,20 @@ describe('generateTable', () => {
       `|        | 2\t | 3\t | \n|  2\t | 4\t | 6\t | \n|  3\t | 6\t | 9\t | \n`
     );
   });
+});
+
+describe('generateFibonacci', () => {
+  it('returns 1 when given 1 as input', () => {
+    expect(generateFibonacci(1)).toEqual([1]);
+  });
+  it('returns [1, 1] when given 2 as input', () => {
+    expect(generateFibonacci(2)).toEqual([1, 1]);
+  });
+  it('returns [1, 1, 2] when given 2 as input', () => {
+    expect(generateFibonacci(3)).toEqual([1, 1, 2]);
+  });
+
+
+
+
 });

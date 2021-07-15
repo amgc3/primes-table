@@ -1,9 +1,10 @@
 const readline = require('readline-sync');
-const {generateTable} = require('./prime')
+const {generatePrimesTable, generateFibonacciTable} = require('./prime')
 
 const startingPoint = () => {
   console.log('Please enter number: '); 
   let n = readline.prompt();
-  console.log(generateTable(n));
+  console.log(generateFibonacciTable(n));
+  console.log(generatePrimesTable(n))
 }
 startingPoint();
