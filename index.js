@@ -1,5 +1,5 @@
 const readline = require('readline-sync');
-const {generatePrimesTable, generateFibonacciTable} = require('./prime')
+const {generatePrimesTable} = require('./prime')
 
 const startingPoint = () => {
   console.log('Please enter number: '); 
