@@ -2,7 +2,6 @@ const {
   isPrime,
   generatePrimes,
   generateTable,
-  generateFibonacci,
 } = require('./prime');
 
 describe('isPrime', () => {
@@ -69,18 +68,4 @@ describe('generateTable', () => {
   });
 });
 
-describe('generateFibonacci', () => {
-  it('returns 1 when given 1 as input', () => {
-    expect(generateFibonacci(1)).toEqual([1]);
-  });
-  it('returns [1, 1] when given 2 as input', () => {
-    expect(generateFibonacci(2)).toEqual([1, 1]);
-  });
-  it('returns [1, 1, 2] when given 2 as input', () => {
-    expect(generateFibonacci(3)).toEqual([1, 1, 2]);
-  });
 
-
-
-
-});

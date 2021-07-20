@@ -6,7 +6,6 @@ const startingPoint = () => {
   let n = readline.prompt();
   console.log('Please enter operator: +/* '); 
   let op = readline.prompt()
-  console.log(generateFibonacciTable(n, op));
   console.log(generatePrimesTable(n, op))
 }
 startingPoint();
