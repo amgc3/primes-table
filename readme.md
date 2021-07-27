@@ -1,10 +1,10 @@
 # Primes Table Generator
 
-I am building a little app that takes numeric input, n, from a user and outputs a multiplication table of n prime numbers. 
+I am building a little app that takes numeric input, n, and an operator, either * or + from a user and outputs a multiplication/addition table of n prime numbers. 
 
 ---
 To test, clone this repository.\
 To install required dependencies, use npm install.\
 To run, use node index.js in a terminal window.\
 \
-If I had more time I would consider building a React interface.
+
